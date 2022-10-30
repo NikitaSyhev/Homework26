@@ -41,47 +41,49 @@ void update_info(movies& P) {
 	unsigned int duration_update;
 	unsigned int price_update;
 
-std::cout << "Выберите, какую информацию о фильме необходимо обновить : ";
-std:: cout << "1. Название.\n";
-std::cout << "2. Год выхода.\n";
-std::cout << "3. Жанр.\n";
-std::cout << "4. Продолжительность.\n";
-std::cout << "5. Цена за диск.\n";
+	std::cout << "Выберите, какую информацию о фильме необходимо обновить : ";
+	std::cout << "1. Название.\n";
+	std::cout << "2. Год выхода.\n";
+	std::cout << "3. Жанр.\n";
+	std::cout << "4. Продолжительность.\n";
+	std::cout << "5. Цена за диск.\n";
 
-std::cin >> n;
-if (n == 1)
-std::cout << "Введите новое название: \n";
-std::cin >> title_update;
-P.title = title_update;
-std::cout << "Информация обновлена.\n"; 
+	std::cin >> n;
+	switch (n) {
+	case 1:
+		std::cout << "Введите новое название: \n";
+		std::cin >> title_update;
+		P.title = title_update;
+		std::cout << "Информация обновлена.\n";
+		break;
 
-if (n == 2)
-std::cout << "Введите новый год выхода: \n";
-std::cin >> year_update;
-P.year = year_update;
-std::cout << "Информация обновлена.\n";
+	case 2:
+		std::cout << "Введите новый год выхода: \n";
+		std::cin >> year_update;
+		P.year = year_update;
+		std::cout << "Информация обновлена.\n";
+	case 3:
+		std::cout << "Введите новый жанр: \n";
+		std::cin >> genre_update;
+		P.genre = genre_update;
+		std::cout << "Информация обновлена.\n";
 
-if (n == 3)
-std::cout << "Введите новый жанр: \n";
-std::cin >> genre_update;
-P.genre = genre_update;
-std::cout << "Информация обновлена.\n";
+	case 4:
+		std::cout << "Введите новую продолжительность: \n";
+		std::cin >> duration_update;
+		P.duration = duration_update;
+		std::cout << "Информация обновлена.\n";
 
-if (n == 4)
-std::cout << "Введите новую продолжительность: \n";
-std::cin >> duration_update;
-P.duration = duration_update;
-std::cout << "Информация обновлена.\n";
-
-if (n == 5)
-std::cout << "Введите новую цену за диск: \n";
-std::cin >> price_update;
-P.price = price_update;
-std::cout << "Информация обновлена.\n";
-
+	case 5:
+		std::cout << "Введите новую цену за диск: \n";
+		std::cin >> price_update;
+		P.price = price_update;
+		std::cout << "Информация обновлена.\n";
 
 
-};
+
+	}
+}
 
 int main() {
 	setlocale(LC_ALL, "Russian");
